@@ -1,21 +1,34 @@
 <?php get_header(); ?>
-        
-        <!-- headline seection -->
-		<?php get_template_part('template-parts/content', 'headline'); ?>
+<!-- headline seection -->
+<?php get_template_part('template-parts/content', 'headline'); ?>
+<!-- presidential candidate section -->
+<?php get_template_part('template-parts/content', 'presidents'); ?>
 
-        <!-- presidential candidate section -->
-		<?php get_template_part('template-parts/content', 'presidents'); ?>
-        <!-- Voter education -->
-		<?php get_template_part('template-parts/content', 'votereducation'); ?>
-		<?php get_template_part('template-parts/content', 'video'); ?>
-    
-    
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<section>
+	<div class="layout section">
 
+		<div class="main-content">			
+			<!-- Voter education -->
+			 <?php get_template_part('template-parts/content', 'votereducation'); ?>
+			 <!-- Video Posts -->
+			  <?php get_template_part('template-parts/content', 'video'); ?>
+		</div>
+		
+		<aside class="sidebar">
+			<!-- Newsletter Signup -->
+			<div class="newsletter">
+				<h4>Weekly Newsletter</h4>
+				<p>Subscribe to stay up-to-date on all the latest news</p>
+				<form>
+					<input type="email" placeholder="Email" required>
+					<button type="submit">Sign Up</button>
+				</form>
+			</div>
+			<!-- Advertisement -->
+			 <div class="ad">
+				<img src="<?php echo get_template_directory_uri();?>/assets/images/ad.png" alt="Advertisement" style="width: 100%;">
+			</div>
+		</aside>
 
-</body>
-
-</html>
+	</div>
+</section>
