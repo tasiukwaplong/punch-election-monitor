@@ -1,5 +1,6 @@
 <section>
     <div class="row mt-5">
+        
         <div class="col-md-8">
             <?php
             $headline_query = new WP_Query(array(
@@ -20,7 +21,7 @@
                         $index = 0;
                         while ($headline_query->have_posts()) : $headline_query->the_post();
                         ?>
-                            <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                            <a style="text-decoration: none" href="<?php the_permalink(); ?>" class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                                 <div class="row">
                                     <div class="col-8">
                                         <?php if (has_post_thumbnail()) : ?>
@@ -34,10 +35,10 @@
                                         <h5 class="mt-2"><?php the_title(); ?></h5>
                                         <p class="text-muted"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></p>
                                         <p class="text-muted"><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-dark">Read More</a>
+                                        <span class="btn btn-dark">Read More</span>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         <?php
                             $index++;
                         endwhile;
