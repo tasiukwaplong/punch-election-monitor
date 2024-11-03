@@ -29,7 +29,8 @@
 				<img src="<?php echo get_template_directory_uri();?>/assets/images/ad.png" alt="Advertisement" style="width: 100%;">
 			</div>
 		</aside>
-
 	</div>
+	<?php get_template_part('template-parts/content', 'electionstories'); ?>
+
 </section>
 <?php get_footer(); ?>
