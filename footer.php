@@ -1,6 +1,3 @@
-<footer>
-    <p>&copy; <?php echo date("Y"); ?> Punch Election Monitor</p>
-    <?php wp_footer(); ?>
-</footer>
+<?php wp_footer(); ?>
 </body>
 </html>
