@@ -1,0 +1,533 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 Election Monitor</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Navigation Bar */
+
+        nav {
+            background-color: #d2232a;
+            padding: 1rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Header section */
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 2rem;
+            background-color: #fff;
+        }
+
+        .header img {
+            width: 100%;
+            max-width: 500px;
+            margin-right: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h2 {
+            font-size: 1.5rem;
+            color: #d2232a;
+            margin-bottom: 1rem;
+        }
+
+        .header-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Sections */
+
+        .section {
+            padding: 2rem 0;
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .section h3 {
+            margin-bottom: 1rem;
+            color: #d2232a;
+        }
+
+        /* Presidential Candidates Carousel */
+
+        .candidates {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+        }
+
+        .candidate-card {
+            flex: 0 0 100px;
+            background: #fff;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .candidate-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Voter Education and Video Posts */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .post-card {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        /* Sidebar */
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter,
+        .ad {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .newsletter button {
+            background-color: #d2232a;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive Styling */
+
+        @media (min-width: 768px) {
+            .layout {
+                display: flex;
+                gap: 2rem;
+            }
+            .main-content {
+                flex: 3;
+            }
+            .sidebar {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Live Update</a></li>
+                    <li><a href="#">Election 2023</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Return To Punch Home Page</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- headline seection -->
+        <section>
+            <div class="row mt-5">
+                <!-- Carousel Column -->
+                <div class="col-md-8">
+                    <div id="newsCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#newsCarousel" data-slide-to="1"></li>
+                            <li data-target="#newsCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <img src="president1.png" class="d-block w-100" alt="President 1">
+                                    </div>
+                                    <div class="col-4 d-flex flex-column justify-content-center p-4 bg-light">
+                                        <span class="badge badge-danger">Interview</span>
+                                        <h5 class="mt-2">Benue supplementary polls: Ortom leads in 9 of 13 LGAs</h5>
+                                        <p class="text-muted">Lorem ipsum dolor sit amet, pretium elementum.</p>
+                                        <p class="text-muted">10 seconds ago</p>
+                                        <a href="#" class="btn btn-dark">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <img src="president2.png" class="d-block w-100" alt="President 2">
+                                    </div>
+                                    <div class="col-4 d-flex flex-column justify-content-center p-4 bg-light">
+                                        <span class="badge badge-danger">Interview</span>
+                                        <h5 class="mt-2">Benue supplementary polls: Ortom leads in 9 of 13 LGAs</h5>
+                                        <p class="text-muted">Lorem ipsum dolor sit amet, pretium elementum.</p>
+                                        <p class="text-muted">10 seconds ago</p>
+                                        <a href="#" class="btn btn-dark">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <img src="president3.png" class="d-block w-100" alt="President 3">
+                                    </div>
+                                    <div class="col-4 d-flex flex-column justify-content-center p-4 bg-light">
+                                        <span class="badge badge-danger">Interview</span>
+                                        <h5 class="mt-2">Benue supplementary polls: Ortom leads in 9 of 13 LGAs</h5>
+                                        <p class="text-muted">Lorem ipsum dolor sit amet, pretium elementum.</p>
+                                        <p class="text-muted">10 seconds ago</p>
+                                        <a href="#" class="btn btn-dark">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#newsCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                        <a class="carousel-control-next" href="#newsCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                    </div>
+                </div>
+
+                <!-- Advertisement Column -->
+                <div class="col-md-4 d-flex align-items-center justify-content-center bg-secondary text-white">
+                    <div class="text-center p-3">
+                        <h4>Advertisement</h4>
+                        <p>Place your ad content here</p>
+                        <!-- Example Ad Content -->
+                        <a href="#" class="btn btn-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- presidential candidate section -->
+        <section class="candidates">
+            <div class="">
+                <h3>Presidential Candidate</h3>
+                <div id="candidateCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#candidateCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#candidateCarousel" data-slide-to="1"></li>
+                        <li data-target="#candidateCarousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Carousel Content -->
+                    <div class="carousel-inner">
+                        <!-- First Slide -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="candidate1.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 1">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate2.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 2">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate3.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 3">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate1.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Second Slide -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="candidate2.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 4">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate1.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 1">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate2.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 2">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate3.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Third Slide -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="candidate1.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 1">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate2.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 4">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate2.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 2">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="candidate3.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <a class="carousel-control-prev" href="#candidateCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                    <a class="carousel-control-next" href="#candidateCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+
+                <!-- </section> -->
+            </div>
+        </section>
+
+        <!-- voter education section -->
+        <section>
+        <div class="layout section">
+            <div class="main-content">
+                <!-- Voter Education -->
+                <section class="section">
+                    <h3>Voter Education</h3>
+                    <div class="grid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="post-card">
+                                <img src="voter-education1.png" alt="Voter Education">
+                                <p>Lorem ipsum dolor sit amet, conse adipiscing elit. Habitasse massa pretium elementum.</p>
+                                <small>February 19, 2022</small>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="post-card">
+                                <img src="voter-education1.png" alt="Voter Education">
+                                <p>Lorem ipsum dolor sit amet, conse adipiscing elit. Habitasse massa pretium elementum.</p>
+                                <small>February 19, 2022</small>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="post-card">
+                                <img src="voter-education1.png" alt="Voter Education">
+                                <p>Lorem ipsum dolor sit amet, conse adipiscing elit. Habitasse massa pretium elementum.</p>
+                                <small>February 19, 2022</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat post cards as needed -->
+                    </div>
+                </section>
+
+                <!-- Video Posts -->
+                <section class="section">
+                    <h3>Video Posts</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="post-card">
+                                <img src="voter-education1.png" alt="Voter Education">
+                                <p>Lorem ipsum dolor sit amet, conse adipiscing elit. Habitasse massa pretium elementum.</p>
+                                <small>February 19, 2022</small>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="row post-card">
+                                <div class="col-md-6 pr-1">
+                                    <img src="voter-education1.png" alt="Voter Education">
+                                </div>
+                                <div class="col-md-6 p-1">
+                                    <p>Lorem ipsumamet, conse adipiscing elit..</p>
+                                    <small>February 19, 2022</small>
+                                </div>
+                            </div>
+
+                            <div class="row post-card">
+                                <div class="col-md-6 pr-1">
+                                    <img src="voter-education1.png" alt="Voter Education">
+                                </div>
+                                <div class="col-md-6 p-1">
+                                    <p>Lorem ipsumamet, conse adipiscing elit..</p>
+                                    <small>February 19, 2022</small>
+                                </div>
+                            </div>
+
+                            <div class="row post-card">
+                                <div class="col-md-6 pr-1">
+                                    <img src="voter-education1.png" alt="Voter Education">
+                                </div>
+                                <div class="col-md-6 p-1">
+                                    <p>Lorem ipsumamet, conse adipiscing elit..</p>
+                                    <small>February 19, 2022</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Newsletter Signup -->
+                <div class="newsletter">
+                    <h4>Weekly Newsletter</h4>
+                    <p>Subscribe to stay up-to-date on all the latest news</p>
+                    <form>
+                        <input type="email" placeholder="Email" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+
+                <!-- Advertisement -->
+                <div class="ad">
+                    <img src="ad.png" alt="Advertisement" style="width: 100%;">
+                </div>
+            </aside>
+
+        </div>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 pt-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="candidate1.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 1">
+                        </div>
+                        <div class="col-md-7">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit aspernatur necessitatibus aliquam voluptatum soluta eveniet iure, deleniti quos ipsum suscipit perspiciatis animi laudantium ad sint iusto ratione nesciunt repellat.
+                            <p>
+                                <span class="float-right text-white p-1 rounded bg-danger">236</span>
+                                <span class="float-left">April, 2024</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 pt-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="candidate1.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 1">
+                        </div>
+                        <div class="col-md-7">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit aspernatur necessitatibus aliquam voluptatum soluta eveniet iure, deleniti quos ipsum suscipit perspiciatis animi laudantium ad sint iusto ratione nesciunt repellat.
+                            <p>
+                                <span class="float-right text-white p-1 rounded bg-danger">236</span>
+                                <span class="float-left">April, 2024</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 pt-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="candidate1.png" class="w-100 candidate-img img-fluid rounded" alt="Candidate 1">
+                        </div>
+                        <div class="col-md-7">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit aspernatur necessitatibus aliquam voluptatum soluta eveniet iure, deleniti quos ipsum suscipit perspiciatis animi laudantium ad sint iusto ratione nesciunt repellat.
+                            <p>
+                                <span class="float-right text-white p-1 rounded bg-danger">236</span>
+                                <span class="float-left">April, 2024</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
