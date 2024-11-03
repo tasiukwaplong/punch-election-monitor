@@ -4,9 +4,9 @@ add_theme_support('post-thumbnails');
 
 function punch_monitor_setup() {
     add_image_size('candidate-thumbnail', 300, 300, true); 
+    add_image_size('voter-education-size', 600, 400, true);
 }
 add_action('after_setup_theme', 'punch_monitor_setup');
-
 
 
 function punch_monitor_create_candidate_post_type() {
