@@ -190,3 +190,7 @@
                 </ul>
             </nav>
         </header>
+
+        <div class="text-center m-3">
+			<img src="<?php echo get_template_directory_uri();?>/assets/images/flier.png" class="img-responsive" style="height: 50px; ">
+		</div>
