@@ -1,4 +1,22 @@
 <?php
+function punch_monitor_setup_default_categories() {
+    $categories = array(
+        'Election 2023',
+        'Video',
+        'Live updates',
+        'Headline',
+        'candidate',
+        'Voter Education',
+    );
+
+    foreach ($categories as $category) {
+        if (!term_exists($category, 'category')) {
+            wp_insert_term($category, 'category');
+        }
+    }
+}
+add_action('after_switch_theme', 'punch_monitor_setup_default_categories');
+
 
 add_theme_support('post-thumbnails');
 
