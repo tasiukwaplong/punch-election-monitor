@@ -182,7 +182,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="<?php echo home_url();?>">Home</a></li>
                     <li><a href="#">Live Update</a></li>
                     <li><a href="#">Election 2023</a></li>
                     <li><a href="#">Videos</a></li>

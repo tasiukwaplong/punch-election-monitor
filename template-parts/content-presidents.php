@@ -1,5 +1,5 @@
 <section class="candidates">
-    <div class="">
+    <div class="section">
         <h3>Presidential Candidate</h3>
         <div id="candidateCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
