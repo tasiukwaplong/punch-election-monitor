@@ -2,16 +2,14 @@
     <h3>Education Posts</h3>
     <div class="row">
         <?php
-        // Query for posts in the 'education' category
         $education_query = new WP_Query(array(
-            'category_name' => 'video', // Use the slug of the 'education' category
-            'posts_per_page' => 4,          // Display 4 posts: one main, three smaller
+            'category_name' => 'video',
+            'posts_per_page' => 4, 
             'orderby' => 'date',
             'order' => 'DESC',
         ));
 
         if ($education_query->have_posts()) :
-            // Display the first post as the main large post
             $education_query->the_post();
             ?>
             <div class="col-md-6">
@@ -34,7 +32,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <?php
-                    // Display the next three posts as smaller cards
+                    
                     while ($education_query->have_posts()) : $education_query->the_post(); ?>
                         <div class="col-md-12 mb-3">
                             <div class="post-card card">
