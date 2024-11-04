@@ -183,7 +183,7 @@
             <nav>
                 <ul>
                     <li><a href="<?php echo home_url();?>">Home</a></li>
-                    <li><a href="#">Live Update</a></li>
+                    <li><a href="<?php echo home_url().'/category/live-updates';?>">Live Update</a></li>
                     <li><a href="#">Election 2023</a></li>
                     <li><a href="#">Videos</a></li>
                     <li><a href="#">Return To Punch Home Page</a></li>
